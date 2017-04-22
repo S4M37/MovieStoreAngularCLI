@@ -1,0 +1,104 @@
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
+
+
+  <md-toolbar class="background-primary">
+    <p style="color: #fff;">
+      Angular Material Movies App
+    </p>
+
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+
+  <div class="app-content">
+
+    <table>
+      <tr>
+        <td>
+          <md-card>
+            <table>
+              <tr>
+                <td>
+                  Ajouter un acteur
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <md-progress-bar mode="indeterminate" *ngIf="isActorLoading"></md-progress-bar>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <md-input-container>
+                    <input mdInput placeholder="Nom de l'acteur" ([ngModel])="actor.name">
+                  </md-input-container>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <md-input-container>
+                    <input mdInput placeholder="Année de naissance de l'acteur" ([ngModel])="actor.birth_year">
+                  </md-input-container>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button md-button class="btn" (click)="addActor()">Ajouter un acteur</button>
+                </td>
+              </tr>
+            </table>
+          </md-card>
+        </td>
+        <td>
+          <md-card>
+            <table>
+              <tr>
+                <td>
+                  Ajouter un film
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <md-progress-bar mode="indeterminate" *ngIf="isMovieLoading"></md-progress-bar>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <md-input-container>
+                    <input mdInput placeholder="Titre du film" ([ngModel])="movie.title">
+                  </md-input-container>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <md-input-container>
+                    <input mdInput placeholder="Année de publication du film" ([ngModel])="movie.year">
+                  </md-input-container>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button md-button class="btn" (click)="addMovie()">Ajouter un film</button>
+                </td>
+              </tr>
+            </table>
+          </md-card>
+        </td>
+      </tr>
+    </table>
+
+
+    <md-card>
+      <md-tab-group>
+        <md-tab label="Acteurs">
+          <app-actors></app-actors>
+        </md-tab>
+        <md-tab label="Movies">
+          <app-movies></app-movies>
+        </md-tab>
+      </md-tab-group>
+    </md-card>
+
+  </div>
+
+</md-sidenav-container>
