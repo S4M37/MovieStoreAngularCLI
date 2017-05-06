@@ -1,4 +1,5 @@
-<table border="1">
+<table class="table table-striped table-hover ">
+  <thead>
   <tr>
     <td width="20%">id</td>
     <td width="20%">titre</td>
@@ -6,11 +7,30 @@
     <td width="20%">acteurs</td>
     <td width="20%">actions</td>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let item of movies">
     <td>{{item.id}}</td>
-    <td>{{item.name}}</td>
-    <td>{{item.birth_year}}</td>
-    <td>{{item.movies.toString()}}</td>
-    <td></td>
+    <td>{{item.title}}</td>
+    <td>{{item.year}}</td>
+    <td>
+      <div *ngFor="let actor of item.actors">
+        <button type="button" class="btn btn-primary"
+                btnCheckbox
+                btnCheckboxTrue="1" btnCheckboxFalse="0">
+          {{actor.name}}
+        </button>
+      </div>
+    </td>
+    <td>
+      <button class="btn btn-danger" cli
+              (click)="deleteMovie(item,i)">
+        Delete
+      </button>
+      <button class="btn btn-warning" (click)="editMovie(item,i)">
+        Edit
+      </button>
+    </td>
   </tr>
+  </tbody>
 </table>

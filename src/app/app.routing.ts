@@ -1,6 +1,9 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
+import {HomeComponent} from "./home/home.component";
+import {AddMovieComponent} from "./addmovie/addmovie.component";
+import {AddActorComponent} from "./addactor/addactor.component";
+import {SearchMovieComponent} from "./search-movie/search-movie.component";
 
 // Layouts
 
@@ -17,26 +20,18 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-    /*,
-     children: [
-     {
-     path: 'question',
-     loadChildren: './manager/question/question.module#QuestionModule'
-     },
-     {
-     path: 'polls',
-     loadChildren: './manager/polls/polls.module#PollsModule'
-     },
-     {
-     path: 'stats',
-     loadChildren: './manager/stats/stats.module#StatsModule'
-
-     },
-     {
-     path: 'vote',
-     loadChildren: './user/vote/vote.module#VoteModule'
-     }
-     ]*/
+  },
+  {
+    path: 'add-movie',
+    component: AddMovieComponent
+  },
+  {
+    path: 'add-actor',
+    component: AddActorComponent
+  },
+  {
+    path: 'search-movie',
+    component: SearchMovieComponent
   }
 ];
 

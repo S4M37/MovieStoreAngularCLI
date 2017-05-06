@@ -16,7 +16,6 @@ export class ActorsComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.actorService.getAllActors().subscribe(data => {
       this.actors = data;
     }, error => {
@@ -24,4 +23,13 @@ export class ActorsComponent implements OnInit {
     });
   }
 
+  deleteActor(actor: Actor, indice: number) {
+    console.log(actor.name);
+    this.actorService.deleteActor(actor.id).subscribe();
+    this.actors.splice(indice, 1);
+  }
+
+  editActor(actor: Actor, indice: number) {
+
+  }
 }

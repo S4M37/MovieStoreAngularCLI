@@ -6,35 +6,35 @@ import {AppComponent} from './app.component';
 import {components, providers} from './app.config';
 import {AppRoutingModule} from './app.routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MdButtonModule,
-  MdCardModule,
-  MdInputModule,
-  MdProgressBarModule,
-  MdSidenavModule,
-  MdTabsModule,
-  MdToolbarModule
-} from '@angular/material';
-import { ActorsComponent } from './home/actors/actors.component';
-import { MoviesComponent } from './home/movies/movies.component';
 
+import {ActorsComponent} from './home/actors/actors.component';
+import {MoviesComponent} from './home/movies/movies.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { AddMovieComponent } from './addmovie/addmovie.component';
+import { AddActorComponent } from './addactor/addactor.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...components,
     ActorsComponent,
-    MoviesComponent
+    MoviesComponent,
+    NavbarComponent,
+    AddMovieComponent,
+    AddActorComponent,
+    SearchMovieComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MdToolbarModule, MdSidenavModule, MdCardModule,
-    MdInputModule, MdTabsModule, MdButtonModule,
-    MdProgressBarModule
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [...providers],
   bootstrap: [AppComponent]

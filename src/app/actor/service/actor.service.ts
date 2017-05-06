@@ -51,4 +51,19 @@ export class ActorService extends GenericService {
       return data;
     }).catch(this.handleErrors);
   }
+
+  deleteActor(id: number) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    // headers.append('Authorization', 'Bearer ' + Config.token);
+    const options = new RequestOptions({headers: headers});
+    return this.http.delete(
+      Endpoints.ACTORS_ENDPOINT + '/' + id,
+      options
+    ).map(response => {
+      this.handleResponse(response);
+      return response.json();
+    }).map(data => {
+      return data;
+    }).catch(this.handleErrors);
+  }
 }

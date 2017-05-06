@@ -39,13 +39,5 @@ export class HomeComponent implements OnInit {
 
   }
 
-  addMovie() {
-    this.isMovieLoading = true;
-    const baseContext = this;
-    this.movieService.addMovie(this.movie).subscribe(data => {
-      baseContext.isMovieLoading = false;
-    }, error => {
-      baseContext.isMovieLoading = false;
-    });
-  }
+
 }
